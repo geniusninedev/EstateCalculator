@@ -490,7 +490,8 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/buttoncalculate"
                     android:layout_weight="1"
-                    android:textColor="@android:color/black" />
+                    android:textStyle="bold"
+                    android:textColor="@android:color/white" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -507,7 +508,8 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/buttonclear"
                     android:layout_weight="1"
-                    android:textColor="@android:color/black"/>
+                    android:textStyle="bold"
+                    android:textColor="@android:color/white"/>
             </LinearLayout>
             <LinearLayout
                 android:orientation="horizontal"
