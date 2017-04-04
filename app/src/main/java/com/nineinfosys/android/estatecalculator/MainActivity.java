@@ -26,6 +26,7 @@ import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -39,6 +40,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.microsoft.windowsazure.mobileservices.MobileServiceClient;
 import com.microsoft.windowsazure.mobileservices.http.OkHttpClientFactory;
 import com.microsoft.windowsazure.mobileservices.table.MobileServiceTable;
+import com.nineinfosys.android.estatecalculator.DashBord.GetApp;
 import com.nineinfosys.android.estatecalculator.Login.Contacts;
 import com.nineinfosys.android.estatecalculator.Login.LoginActivity;
 import com.squareup.okhttp.OkHttpClient;
@@ -78,6 +80,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
+
         //firbase auth
         firebaseAuth = FirebaseAuth.getInstance();
 
@@ -107,7 +111,7 @@ public class MainActivity extends AppCompatActivity {
         calclear = (Button) findViewById(R.id.buttonclear);
         total = (TextView) findViewById(R.id.totalid);
         federal = (TextView) findViewById(R.id.federaltvid);
-
+        Button buttonhelp = (Button) findViewById(R.id.vatbuttonhelp);
 
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
         mNavigationView = (NavigationView) findViewById(R.id.shitstuff);
@@ -146,13 +150,9 @@ public class MainActivity extends AppCompatActivity {
 
                 if (menuItem.getItemId() == R.id.GetApps) {
 
-                    /*Intent intent=new Intent(MainActivityDrawer.this,RequestApp.class);
+                    Intent intent=new Intent(MainActivity.this,GetApp.class);
                     startActivity(intent);
-*/
-
                 }
-
-
                 if (menuItem.getItemId() == R.id.RateUs) {
                     final String appPackageName = getPackageName(); // getPackageName() from Context or Activity object
                     try {
@@ -218,6 +218,14 @@ public class MainActivity extends AppCompatActivity {
                 state.setText("0");
                 total.setText("0");
                 federal.setText("0");
+            }
+        });
+        buttonhelp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent helpref = new Intent(MainActivity.this,EstateTxHelp.class);
+                startActivity(helpref);
             }
         });
     }

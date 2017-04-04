@@ -485,13 +485,13 @@
                     android:text="Calculate"
                     android:background="@drawable/sal"
                     android:backgroundTint="#2E86C1"
+                    android:textStyle="bold"
                     android:layout_marginTop="30dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/buttoncalculate"
                     android:layout_weight="1"
-                    android:textStyle="bold"
-                    android:textColor="@android:color/white" />
+                    android:textColor="#ffffff" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -503,13 +503,30 @@
                     android:text="Reset"
                     android:background="@drawable/sal"
                     android:backgroundTint="#2E86C1"
+                    android:textStyle="bold"
                     android:layout_marginTop="30dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/buttonclear"
                     android:layout_weight="1"
+                    android:textColor="#ffffff"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="  "
+                    />
+
+                <Button
+                    android:text="Help"
+                    android:background="@drawable/sal"
+                    android:backgroundTint="#2E86C1"
                     android:textStyle="bold"
-                    android:textColor="@android:color/white"/>
+                    android:layout_marginTop="30dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/vatbuttonhelp"
+                    android:layout_weight="1"
+                    android:textColor="#ffffff"/>
             </LinearLayout>
             <LinearLayout
                 android:orientation="horizontal"
